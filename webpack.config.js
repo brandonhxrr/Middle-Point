@@ -1,8 +1,12 @@
+var path = require('path');
+
 module.exports = {
     mode: "development",
     entry: "./src/Aplicacion.jsx",
     output: {
-    filename: "main.js"
+      path: path.resolve(__dirname, 'dist'),
+      publicPath: '/Middle-Point/',
+      filename: "main.js"
     },
     module: {
         rules: [
@@ -12,7 +16,24 @@ module.exports = {
             use: {
               loader: "babel-loader"
             }
+          },
+          {
+            test: /\.css$/,
+            use: [
+              // [style-loader](/loaders/style-loader)
+              { loader: 'style-loader' },
+              // [css-loader](/loaders/css-loader)
+              {
+                loader: 'css-loader',
+                options: {
+                  modules: true
+                }
+              }
+            ]
           }
         ]
+      },
+      devServer: {
+        historyApiFallback: true,
       }    
     }
