@@ -4,7 +4,7 @@ module.exports = {
     mode: "development",
     entry: "./src/Aplicacion.jsx",
     output: {
-      path: path.resolve(__dirname, 'dist'),
+      path: path.resolve(__dirname, 'src/main/webapp/dist'),
       publicPath: '/Middle-Point/',
       filename: "main.js"
     },
