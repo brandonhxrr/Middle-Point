@@ -27,17 +27,7 @@ public class Login extends HttpServlet {
                 
         try (PrintWriter out = response.getWriter()) {
             if(request.getParameter("btn")!=null){
-                out.println("<!DOCTYPE html>");
-                out.println("<html>");
-                out.println("<head>");
-                out.println("<title>Servlet Contacto</title>");  
-                out.println("<link  rel=\"stylesheet\" href=\"./stylesheet/styles.css\"/>");
-                out.println("</head>");
-            
-                out.println("<body>");
-                out.println("<div class=\"contenedor-padre\">");
-                out.println("<div class=\"contenedor\">");
-             
+                             
                 if(user==null||user.equals("")||pass==null||pass.equals("")){ 
                     
                     out.print("Ingrese el usuario/contraseña");
@@ -53,21 +43,21 @@ public class Login extends HttpServlet {
                             session.setAttribute("nombre", us.getName());
                             session.setAttribute("correo", us.getEmail());
                             session.setAttribute("contraseña", pass);
-                            out.println("<h2>Contraseña Correcta</h2><br/>");
-                            out.println("Presione par ver el usuario y la contraseña <br/><br/>");
-                            out.println("<a href=./Bienvenido.jsp>Click</a>");
+                            
+                            response.sendRedirect("./bienvenido.jsp");
  
                         }else{
-                            request.setAttribute("user", user);
-                            request.setAttribute("pass", pass);
+                            request.setAttribute("usuario", user);
+                            request.setAttribute("contraseña", pass);
+                            response.sendRedirect("./error.jsp");
                             
                         }
+                    }else{
+                        request.setAttribute("usuario", user);
+                        request.setAttribute("contraseña", pass);
+                        response.sendRedirect("./error.jsp");
                     }
                 }
-                out.println("</div>");
-                out.println("</div>");
-                out.println("</body>");
-                out.println("</html>");
                 out.close();
                 conn.close();
                 

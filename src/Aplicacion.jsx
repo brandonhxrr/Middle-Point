@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import ReactDOM from "react-dom";
 import {BrowserRouter as Router,Switch,Route,Link} from "react-router-dom";
 import Login from './login.jsx';
+import About from './About.jsx';
+import Home from './Home.jsx';
 
  
 class Aplicacion extends React.Component {
@@ -11,7 +13,7 @@ class Aplicacion extends React.Component {
         <div className="App">
           <nav className="navbar navbar-expand-lg navbar-light fixed-top">
             <div className="container">
-              <Link className="navbar-brand" to={''}>
+              <Link className="navbar-brand" to={'/Middle-Point/'}>
                 Middle Point
               </Link>
               <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
@@ -19,6 +21,12 @@ class Aplicacion extends React.Component {
                   <li className="nav-item">
                     <Link className="nav-link" to={'/Middle-Point/login'}>
                       Acceder
+                    </Link>
+                  </li>
+
+                  <li className="nav-item">
+                    <Link className="nav-link" to={'/Middle-Point/about'}>
+                      Acerca de
                     </Link>
                   </li>
                 </ul>
@@ -32,8 +40,11 @@ class Aplicacion extends React.Component {
                 <Route path="/Middle-Point/login">
                   <Login />
                 </Route>
+                <Route path="/Middle-Point/about">
+                  <About />
+                </Route>
                 <Route path="/Middle-Point/">
-                  <Login />
+                  <Home />
                 </Route>
               </Switch>
             </div>
