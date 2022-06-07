@@ -100,4 +100,36 @@ public class Conexion {
        return 0;
    }
    
+   public static StringBuilder getJSON(){
+       
+       ResultSet rs = null;
+       
+       String query = "SELECT * FROM tablajson;";
+       
+       StringBuilder json = new StringBuilder();
+            json.append("[");
+       
+       try{
+          st = conn.prepareStatement(query);
+          rs = st.executeQuery(query);
+          
+           while(rs.next()){
+           
+               String cadena=rs.getString("columnajson");
+                json.append(cadena);
+           }
+           
+           json.append("]");
+           
+           rs.close();
+           st.close();
+           
+           return json;
+          
+       }catch(Exception e){
+           System.out.println("Error al ejecutar la consulta");
+       }
+       return null;
+   }
+   
 }

@@ -29,7 +29,7 @@ body, html, .App, #root, #contenedor, .auth-wrapper {
   text-align: left;
 }
 .auth-inner {
-  width: 450px;
+  width: 90%;
   margin: auto;
   background: #ffffff;
   box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
@@ -60,4 +60,14 @@ body, html, .App, #root, #contenedor, .auth-wrapper {
 }
 .forgot-password a {
   color: #167bff;
+}
+
+button a{
+  color: white;
+  text-decoration: none;
+}
+
+button a:hover{
+  color: white;
+  text-decoration: underline;
 }
