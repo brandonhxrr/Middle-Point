@@ -1,0 +1,74 @@
+import React, { Component } from 'react';
+import { Form } from 'react-bootstrap';
+
+export default class Formulario extends Component {
+  render() {
+    return (
+      <form method="GET" action="Guardar">
+        <h3>Agregar ejercicio</h3><br />
+        <div className="mb-3" class="labin">
+          <label>Ingresa el primer punto: (</label>
+          <input
+            type="number"
+            className="form-control"
+            placeholder="0"
+            name="x1"
+          />
+          <label>,</label>
+          <input
+            type="number"
+            className="form-control"
+            placeholder="0"
+            name="y1"
+          />
+          <label>)</label>
+        </div>
+        <div className="mb-3" class="labin">
+          <label>Ingresa el segundo punto: (</label>
+          <input
+            type="number"
+            className="form-control"
+            placeholder="0"
+            name="x2"
+          />
+          <label>,</label>
+          <input
+            type="number"
+            className="form-control"
+            placeholder="0"
+            name="y2"
+          />
+          <label>)</label>
+        </div><br />
+        <p>Encontrar: </p>
+        
+    <div key="inline-radio" className="mb-3">
+      <Form.Check
+        inline
+        type="radio"
+        id="default-radio"
+        value="distance"
+        label="Distancia entre 2 puntos"
+        name="group1"
+      />
+
+    <Form.Check 
+        inline
+        type="radio"
+        value="middle"
+        id="default-radio"
+        label="Punto medio"
+        name="group1"
+      />
+    </div>
+ 
+        <br />
+        <div className="d-grid">
+          <button type="submit" className="btn btn-primary" name="btn">
+            Guardar
+          </button>
+        </div>
+      </form>
+    )
+  }
+}

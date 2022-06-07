@@ -36,7 +36,7 @@ export default class Home extends Component {
                         : null
                 }
                 <Button variant="info" style={{ margin: "12px" }}>
-                    <Link to="/Crud_React/formulario" className="CustomLink">Añadir nueva pregunta</Link>
+                    <Link to="/Middle-Point/formulario" className="CustomLink">Añadir nuevo ejercicio</Link>
                 </Button>
                 <Table striped bordered >
                     <thead>

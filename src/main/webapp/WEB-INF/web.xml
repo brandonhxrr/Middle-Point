@@ -8,6 +8,10 @@
         <servlet-name>Ejercicios</servlet-name>
         <servlet-class>API.Ejercicios</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Guardar</servlet-name>
+        <servlet-class>API.Guardar</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>Ejercicios</servlet-name>
         <url-pattern>/Ejercicios</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Guardar</servlet-name>
+        <url-pattern>/Guardar</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
