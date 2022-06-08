@@ -76,19 +76,23 @@ public class Conexion {
        return null;
    }
    
-   public static int insertarMensaje(String name, String mail, String message){
+   public static int insertarEjercicio(String id, String titulo, String x1, String y1, String x2, String y2, String tipo){
               
-       String query = "INSERT INTO MESSAGES(NAME, EMAIL, MESSAGE) VALUES(?, ?, ?)";
+       String json = "{ \"id\" : \"" + id + "\" , "
+          + "\"titulo\" : \"" + titulo + "\" , " 
+          + "\"x1\" : \"" + x1 + "\" , " 
+          + "\"y1\" : \"" + y1 + "\" , " 
+          + "\"x2\" : \"" + x2 + "\" , " 
+          + "\"y2\" : \"" + y2 + "\" , " 
+          + "\"tipo\" : \"" + tipo + "\" }";
+       
+       String query = "INSERT INTO EJERCICIOS(EJERCICIO) VALUES('" + json+ "');";
+       System.out.println(query);
        
        try{
           st = conn.prepareStatement(query);
           
-          st.setString(1, name);
-          st.setString(2, mail);
-          st.setString(3, message);
-          
           int rows = st.executeUpdate();
-          
           
           st.close();
           
@@ -104,22 +108,29 @@ public class Conexion {
        
        ResultSet rs = null;
        
-       String query = "SELECT * FROM tablajson;";
+       String query = "SELECT * FROM EJERCICIOS;";
        
        StringBuilder json = new StringBuilder();
-            json.append("[");
+            json.append("[ ");
        
        try{
           st = conn.prepareStatement(query);
           rs = st.executeQuery(query);
           
-           while(rs.next()){
+          boolean next = rs.next();
+          
+           while(next){
            
-               String cadena=rs.getString("columnajson");
+               String cadena=rs.getString("ejercicio");
                 json.append(cadena);
+                next = rs.next();
+                
+                if(next){
+                    json.append(", ");
+                }
            }
            
-           json.append("]");
+           json.append(" ]");
            
            rs.close();
            st.close();

@@ -3,11 +3,11 @@ import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-const Ejercicio = ({ id, pregunta }) => {
+const Ejercicio = ({ id, titulo }) => {
 
     const handleClickEliminar = (event) => {
         //Eliminar
-        axios.post(`http://localhost:8080/Crud_React/Eliminar?id=${id}`).then(response => {
+        axios.post(`/Middle-Point/Eliminar?id=${id}`).then(response => {
             console.info(response.data);
             if (response.data.message) {
                 alert(response.data.message);
@@ -18,33 +18,33 @@ const Ejercicio = ({ id, pregunta }) => {
             console.info(error);
             alert(response.data.message);
         }).finally(() => {
-            window.location.href = "/Crud_React/";
+            window.location.href = "/Middle-Pint/";
         });
     }
 
     return (
         <tr>
-            <td>{pregunta}</td>
+            <td>{titulo}</td>
             <td className="AlignCenter">
                 <Button
                     variant="success"
                     className="M-6">
-                    <Link to={`/Crud_React/info?id=${id}`} className="CustomLink" >
-                        Ver pregunta
+                    <Link to={`/Middle-Point/info?id=${id}`} className="CustomLink" >
+                        Ver ejercicio
                     </Link>
                 </Button>
                 <Button
                     variant="warning"
                     className="M-6">
-                    <Link to={`/Crud_React/formulario?id=${id}`} className="CustomLink" >
-                        Editar pregunta
+                    <Link to={`/Middle-Point/formulario?id=${id}`} className="CustomLink" >
+                        Editar ejercicio
                     </Link>
                 </Button>
                 <Button
                     variant="danger"
                     className="M-6"
                     onClick={handleClickEliminar}>
-                    Eliminar pregunta
+                    Eliminar ejercicio
                 </Button>
             </td>
         </tr>

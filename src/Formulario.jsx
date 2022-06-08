@@ -6,9 +6,19 @@ export default class Formulario extends Component {
     return (
       <form method="GET" action="Guardar">
         <h3>Agregar ejercicio</h3><br />
+        
         <div className="mb-3" class="labin">
+        <label>ID: </label>
+          <input
+            required
+            type="number"
+            className="form-control"
+            placeholder=""
+            name="id"
+          /><br />
           <label>Ingresa el primer punto: (</label>
           <input
+          required
             type="number"
             className="form-control"
             placeholder="0"
@@ -16,6 +26,7 @@ export default class Formulario extends Component {
           />
           <label>,</label>
           <input
+            required
             type="number"
             className="form-control"
             placeholder="0"
@@ -26,6 +37,7 @@ export default class Formulario extends Component {
         <div className="mb-3" class="labin">
           <label>Ingresa el segundo punto: (</label>
           <input
+            required
             type="number"
             className="form-control"
             placeholder="0"
@@ -33,6 +45,7 @@ export default class Formulario extends Component {
           />
           <label>,</label>
           <input
+            required
             type="number"
             className="form-control"
             placeholder="0"
@@ -45,11 +58,12 @@ export default class Formulario extends Component {
     <div key="inline-radio" className="mb-3">
       <Form.Check
         inline
+        checked
         type="radio"
         id="default-radio"
         value="distance"
         label="Distancia entre 2 puntos"
-        name="group1"
+        name="tipo"
       />
 
     <Form.Check 
@@ -58,7 +72,7 @@ export default class Formulario extends Component {
         value="middle"
         id="default-radio"
         label="Punto medio"
-        name="group1"
+        name="tipo"
       />
     </div>
  

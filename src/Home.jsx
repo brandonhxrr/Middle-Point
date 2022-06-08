@@ -13,7 +13,7 @@ export default class Home extends Component {
     }
 
     componentDidMount() {
-        axios.get("http://localhost:8080/Middle-Point/Ejercicios").then(response => {
+        axios.get("/Middle-Point/Ejercicios").then(response => {
             this.setState({ data: response.data });
         }).catch(error => {
             console.info(error);
@@ -26,7 +26,7 @@ export default class Home extends Component {
         const { data, showAlert, alertText } = this.state;
         return (
             <Container className="MarginContainer" >
-                <h1 className="AlignCenter" > CREAR, ALTAS, BAJAS Y CAMBIOS </h1>
+                <h1 className="AlignCenter" > Calculadora de distancia y Punto medio </h1>
                 <hr style={{ width: "80%" }} />
                 {
                     showAlert ?
@@ -47,8 +47,8 @@ export default class Home extends Component {
                     </thead>
                     <tbody>
                         {
-                            data.map(pregunta => {
-                                return <Ejercicio {...pregunta} />
+                            Object.values(data).map(ejercicio => {
+                                return <Ejercicio {...ejercicio} />
                             })
                         }
                     </tbody>
