@@ -18,7 +18,8 @@ public class Conexion {
        
        try{
           Class.forName("com.mysql.cj.jdbc.Driver");
-          conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/middlepoint?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC","root","rootroot");
+          //conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/middlepoint?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC","root","rootroot");
+          conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/middlepoint?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC","root","root");
           
            System.out.println("Base de datos conectada");
           return conn;
@@ -128,6 +129,40 @@ public class Conexion {
                 if(next){
                     json.append(", ");
                 }
+           }
+           
+           json.append(" ]");
+           
+           rs.close();
+           st.close();
+           
+           return json;
+          
+       }catch(Exception e){
+           System.out.println("Error al ejecutar la consulta");
+       }
+       return null;
+   }
+   
+   public static StringBuilder getEjercicio(String id){
+       
+       ResultSet rs = null;
+       
+       String query = "SELECT * FROM EJERCICIOS WHERE json_extract(ejercicio, '$.id') = \""+id+"\"";
+       
+       StringBuilder json = new StringBuilder();
+            json.append("[ ");
+       
+       try{
+          st = conn.prepareStatement(query);
+          rs = st.executeQuery(query);
+          
+          
+           if(rs.next()){
+           
+               String cadena=rs.getString("ejercicio");
+                json.append(cadena);
+                
            }
            
            json.append(" ]");

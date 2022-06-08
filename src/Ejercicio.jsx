@@ -29,14 +29,14 @@ const Ejercicio = ({ id, titulo }) => {
                 <Button
                     variant="success"
                     className="M-6">
-                    <Link to={`/Middle-Point/info?id=${id}`} className="CustomLink" >
+                    <Link to={`/Middle-Point/detalle?id=${id}`} className="CustomLink" >
                         Ver ejercicio
                     </Link>
                 </Button>
                 <Button
                     variant="warning"
                     className="M-6">
-                    <Link to={`/Middle-Point/formulario?id=${id}`} className="CustomLink" >
+                    <Link to={`/Middle-Point/editar?id=${id}?type=true`} className="CustomLink" >
                         Editar ejercicio
                     </Link>
                 </Button>

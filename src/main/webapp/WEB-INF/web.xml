@@ -12,6 +12,10 @@
         <servlet-name>Guardar</servlet-name>
         <servlet-class>API.Guardar</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>BuscarEjercicio</servlet-name>
+        <servlet-class>API.BuscarEjercicio</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>Guardar</servlet-name>
         <url-pattern>/Guardar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BuscarEjercicio</servlet-name>
+        <url-pattern>/BuscarEjercicio</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -4,7 +4,9 @@ import {  BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import Login from "./login.jsx";
 import About from "./About.jsx";
 import Home from "./Home.jsx";
+import Detalle from "./Detalle.jsx";
 import Formulario from "./Formulario.jsx";
+import Editar from "./Editar.jsx";
 
 class Aplicacion extends React.Component {
   render() {
@@ -48,6 +50,12 @@ class Aplicacion extends React.Component {
                   </Route>
                   <Route path="/Middle-Point/formulario">
                     <Formulario />
+                  </Route>
+                  <Route path="/Middle-Point/detalle">
+                    <Detalle />
+                  </Route>
+                  <Route path="/Middle-Point/editar">
+                    <Editar />
                   </Route>
                   <Route path="/Middle-Point/">
                     <Home />

@@ -12,6 +12,7 @@ export default class About extends Component {
           <p><strong>Integrantes:</strong></p> 
 
           <p>Hernandez Herrera Brandon Jesús</p> 
+          <p>Velarde Jímenez Gerardo Isarel</p> 
           <p></p> 
       </div>
     )
