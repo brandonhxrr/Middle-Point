@@ -85,7 +85,7 @@ const Editar = ({ id, x1, y1, x2, y2, r1, r2 }) => {
         <br />
         <div className="d-grid">
           <button type="submit" className="btn btn-primary" name="btn">
-            Guardar
+            Actualizar
           </button>
         </div>
         

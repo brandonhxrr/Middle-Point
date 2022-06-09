@@ -8,17 +8,11 @@ const Ejercicio = ({ id, titulo }) => {
     const handleClickEliminar = (event) => {
         //Eliminar
         axios.post(`/Middle-Point/Eliminar?id=${id}`).then(response => {
-            console.info(response.data);
-            if (response.data.message) {
-                alert(response.data.message);
-            } else {
-                alert(response.data.error);
-            }
+            
         }).catch(error => {
             console.info(error);
-            alert(response.data.message);
         }).finally(() => {
-            window.location.href = "/Middle-Pint/";
+            window.location.href = "/Middle-Point/";
         });
     }
 

@@ -137,6 +137,26 @@ public class Conexion {
        return 0;
    }
    
+   public static int eliminarEjercicio(String id){
+                     
+       String query = "DELETE FROM EJERCICIOS WHERE json_extract(ejercicio, '$.id') = \""+ id + "\" LIMIT 1;";
+       System.out.println(query);
+       
+       try{
+          st = conn.prepareStatement(query);
+          
+          int rows = st.executeUpdate();
+          
+          st.close();
+          
+          return rows;
+          
+       }catch(Exception e){
+           System.out.println("Error al ejecutar la consulta");
+       }
+       return 0;
+   }
+   
    public static StringBuilder getJSON(){
        
        ResultSet rs = null;
