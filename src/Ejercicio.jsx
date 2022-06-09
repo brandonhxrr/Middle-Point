@@ -36,7 +36,7 @@ const Ejercicio = ({ id, titulo }) => {
                 <Button
                     variant="warning"
                     className="M-6">
-                    <Link to={`/Middle-Point/editar?id=${id}?type=true`} className="CustomLink" >
+                    <Link to={`/Middle-Point/editar?id=${id}`} className="CustomLink" >
                         Editar ejercicio
                     </Link>
                 </Button>

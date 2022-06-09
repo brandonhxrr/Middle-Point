@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
-import { Form } from 'react-bootstrap';
+import { Form, InputGroup } from 'react-bootstrap';
 
-const Editar = ({ id, titulo, x1, y1, x2, y2 }) => {
+const Editar = ({ id, x1, y1, x2, y2, r1, r2 }) => {
   
     return (
-      <form method="GET" action="Guardar">
+      <form method="GET" action="Actualizar">
         <h3>Editar ejercicio</h3><br />
         
         <div className="mb-3" class="labin">
         <label>ID: </label>
           <input
-            required
             type="number"
             className="form-control"
             placeholder=""
             name="id"
+            defaultValue={id}
+            readonly="readonly"
           /><br />
           <label>Ingresa el primer punto: (</label>
           <input
@@ -23,6 +24,7 @@ const Editar = ({ id, titulo, x1, y1, x2, y2 }) => {
             className="form-control"
             placeholder="0"
             name="x1"
+            defaultValue={x1}
           />
           <label>,</label>
           <input
@@ -31,6 +33,7 @@ const Editar = ({ id, titulo, x1, y1, x2, y2 }) => {
             className="form-control"
             placeholder="0"
             name="y1"
+            defaultValue={y1}
           />
           <label>)</label>
         </div>
@@ -42,6 +45,7 @@ const Editar = ({ id, titulo, x1, y1, x2, y2 }) => {
             className="form-control"
             placeholder="0"
             name="x2"
+            defaultValue={x2}
           />
           <label>,</label>
           <input
@@ -50,6 +54,7 @@ const Editar = ({ id, titulo, x1, y1, x2, y2 }) => {
             className="form-control"
             placeholder="0"
             name="y2"
+            defaultValue={y2}
           />
           <label>)</label>
         </div><br />
@@ -58,21 +63,22 @@ const Editar = ({ id, titulo, x1, y1, x2, y2 }) => {
     <div key="inline-radio" className="mb-3">
       <Form.Check
         inline
-        checked
+        id="rdistance"
         type="radio"
-        id="default-radio"
         value="distance"
         label="Distancia entre 2 puntos"
         name="tipo"
+        checked={r1}
       />
 
     <Form.Check 
         inline
+        id="rmiddle"
         type="radio"
         value="middle"
-        id="default-radio"
         label="Punto medio"
         name="tipo"
+        checked={r2}
       />
     </div>
  
@@ -82,7 +88,9 @@ const Editar = ({ id, titulo, x1, y1, x2, y2 }) => {
             Guardar
           </button>
         </div>
+        
       </form>
+
     )
   }
 

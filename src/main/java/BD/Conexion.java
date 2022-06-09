@@ -18,8 +18,8 @@ public class Conexion {
        
        try{
           Class.forName("com.mysql.cj.jdbc.Driver");
-          //conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/middlepoint?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC","root","rootroot");
-          conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/middlepoint?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC","root","root");
+          conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/middlepoint?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC","root","rootroot");
+          //conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/middlepoint?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC","root","root");
           
            System.out.println("Base de datos conectada");
           return conn;
@@ -77,7 +77,7 @@ public class Conexion {
        return null;
    }
    
-   public static int insertarEjercicio(String id, String titulo, String x1, String y1, String x2, String y2, String tipo){
+   public static int insertarEjercicio(String id, String titulo, String x1, String y1, String x2, String y2, String tipo, String r1, String r2){
               
        String json = "{ \"id\" : \"" + id + "\" , "
           + "\"titulo\" : \"" + titulo + "\" , " 
@@ -85,9 +85,41 @@ public class Conexion {
           + "\"y1\" : \"" + y1 + "\" , " 
           + "\"x2\" : \"" + x2 + "\" , " 
           + "\"y2\" : \"" + y2 + "\" , " 
-          + "\"tipo\" : \"" + tipo + "\" }";
+          + "\"tipo\" : \"" + tipo + "\" , " 
+          + "\"r1\" : \"" + r1 + "\" , " 
+          + "\"r2\" : \"" + r2 + "\" }";
        
        String query = "INSERT INTO EJERCICIOS(EJERCICIO) VALUES('" + json+ "');";
+       System.out.println(query);
+       
+       try{
+          st = conn.prepareStatement(query);
+          
+          int rows = st.executeUpdate();
+          
+          st.close();
+          
+          return rows;
+          
+       }catch(Exception e){
+           System.out.println("Error al ejecutar la consulta");
+       }
+       return 0;
+   }
+   
+   public static int actualizarEjercicio(String id, String titulo, String x1, String y1, String x2, String y2, String tipo, String r1, String r2){
+              
+       String json = "{ \"id\" : \"" + id + "\" , "
+          + "\"titulo\" : \"" + titulo + "\" , " 
+          + "\"x1\" : \"" + x1 + "\" , " 
+          + "\"y1\" : \"" + y1 + "\" , " 
+          + "\"x2\" : \"" + x2 + "\" , " 
+          + "\"y2\" : \"" + y2 + "\" , " 
+          + "\"tipo\" : \"" + tipo + "\" , " 
+          + "\"r1\" : \"" + r1 + "\" , " 
+          + "\"r2\" : \"" + r2 + "\" }";
+       
+       String query = "UPDATE EJERCICIOS SET EJERCICIO='" + json + "' WHERE json_extract(ejercicio, '$.id') = \""+ id + "\";";
        System.out.println(query);
        
        try{
@@ -148,7 +180,7 @@ public class Conexion {
        
        ResultSet rs = null;
        
-       String query = "SELECT * FROM EJERCICIOS WHERE json_extract(ejercicio, '$.id') = \""+id+"\"";
+       String query = "SELECT * FROM EJERCICIOS WHERE json_extract(ejercicio, '$.id') = \""+id+"\";";
        
        StringBuilder json = new StringBuilder();
             json.append("[ ");

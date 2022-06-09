@@ -1,9 +1,9 @@
 import { Button, Container, Table, Alert } from "react-bootstrap";
 import axios from "axios";
-import Vista from "./Vista.jsx";
+import Editar from "./Editar.jsx";
 import React, { Component } from 'react';
 
-export default class Detalle extends Component {
+export default class DetalleEditar extends Component {
 
     state = {
         data: [],
@@ -44,8 +44,11 @@ export default class Detalle extends Component {
 
                 {
                     
-                   data.map(ejercicio => {
-                        return <Vista {...ejercicio} />
+                
+                    data.map(ejercicio => {
+                        console.log("DATA: ");
+                        console.log(data);
+                        return <Editar {...ejercicio} />
                     })
                                             
                 }

@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class Guardar extends HttpServlet {
+public class Actualizar extends HttpServlet {
     
     Connection conn = Conexion.getConnection();
 
@@ -18,6 +18,7 @@ public class Guardar extends HttpServlet {
             throws ServletException, IOException {
         
         String id = request.getParameter("id");
+        System.out.println("ID: " + id);
         
         String x1 = request.getParameter("x1");
         String y1 = request.getParameter("y1");
@@ -43,11 +44,11 @@ public class Guardar extends HttpServlet {
         
         titulo += "(" + x1 +" , " + y1 + ") y " + "(" + x2 +" , " + y2 + ")";
         
-        if(Conexion.insertarEjercicio(id, titulo, x1, y1, x2, y2, tipo, r1, r2) > 0){
-            System.out.println("Insertado");
+        if(Conexion.actualizarEjercicio(id, titulo, x1, y1, x2, y2, tipo, r1, r2) > 0){
+            System.out.println("Actualizado");
             response.sendRedirect("./index.html");
         }else{
-            System.out.println("Error al insertar");
+            System.out.println("Error al actualizar");
         }
         
         
