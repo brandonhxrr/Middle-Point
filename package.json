@@ -1,8 +1,8 @@
 {
-  "name": "Middle-Point",
+  "name": "middle-point",
   "version": "1.0.0",
   "description": "React Application with Java Servlets to calculate and graph the distance between two points",
-  "main": "index.js",
+  "main": "Aplicacion.jsx",
   "scripts": {
     "build": "webpack"
   },
@@ -21,6 +21,7 @@
     "@babel/core": "^7.18.2",
     "@babel/preset-env": "^7.18.2",
     "@babel/preset-react": "^7.17.12",
+    "@types/faker": "5.5.3",
     "babel-loader": "^8.2.5",
     "css-loader": "^6.7.1",
     "less-loader": "^11.0.0",
@@ -32,9 +33,13 @@
   "dependencies": {
     "axios": "^0.27.2",
     "bootstrap": "^5.2.0-beta1",
+    "chart.js": "^3.6.0",
+    "faker": "5.5.3",
     "react": "^17.0.1",
     "react-bootstrap": "^2.4.0",
+    "react-chartjs-2": "^4.0.0",
     "react-dom": "^17.0.1",
-    "react-router-dom": "^5.2.0"
+    "react-router-dom": "^5.2.0",
+    "react-vis": "^1.11.7"
   }
 }

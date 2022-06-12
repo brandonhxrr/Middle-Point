@@ -77,8 +77,9 @@ public class Conexion {
        return null;
    }
    
-   public static int insertarEjercicio(String id, String titulo, String x1, String y1, String x2, String y2, String tipo, String r1, String r2){
+   public static int insertarEjercicio(String id, String titulo, String x1, String y1, String x2, String y2, String tipo, String r1, String r2, String puntos, String procedimiento){
               
+       System.out.println("Hola");
        String json = "{ \"id\" : \"" + id + "\" , "
           + "\"titulo\" : \"" + titulo + "\" , " 
           + "\"x1\" : \"" + x1 + "\" , " 
@@ -87,7 +88,9 @@ public class Conexion {
           + "\"y2\" : \"" + y2 + "\" , " 
           + "\"tipo\" : \"" + tipo + "\" , " 
           + "\"r1\" : \"" + r1 + "\" , " 
-          + "\"r2\" : \"" + r2 + "\" }";
+          + "\"r2\" : \"" + r2 + "\" , " 
+          + "\"puntos\" : " + puntos + " , "    
+          + "\"procedimiento\" : " + procedimiento + " }";
        
        String query = "INSERT INTO EJERCICIOS(EJERCICIO) VALUES('" + json+ "');";
        System.out.println(query);
@@ -107,7 +110,7 @@ public class Conexion {
        return 0;
    }
    
-   public static int actualizarEjercicio(String id, String titulo, String x1, String y1, String x2, String y2, String tipo, String r1, String r2){
+   public static int actualizarEjercicio(String id, String titulo, String x1, String y1, String x2, String y2, String tipo, String r1, String r2, String puntos, String procedimiento){
               
        String json = "{ \"id\" : \"" + id + "\" , "
           + "\"titulo\" : \"" + titulo + "\" , " 
@@ -117,7 +120,9 @@ public class Conexion {
           + "\"y2\" : \"" + y2 + "\" , " 
           + "\"tipo\" : \"" + tipo + "\" , " 
           + "\"r1\" : \"" + r1 + "\" , " 
-          + "\"r2\" : \"" + r2 + "\" }";
+          + "\"r2\" : \"" + r2 + "\" , " 
+          + "\"puntos\" : " + puntos + " , "    
+          + "\"procedimiento\" : " + procedimiento + " }";
        
        String query = "UPDATE EJERCICIOS SET EJERCICIO='" + json + "' WHERE json_extract(ejercicio, '$.id') = \""+ id + "\";";
        System.out.println(query);

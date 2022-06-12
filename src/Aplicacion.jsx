@@ -7,6 +7,7 @@ import Home from "./Home.jsx";
 import Detalle from "./Detalle.jsx";
 import Formulario from "./Formulario.jsx";
 import DetalleEditar from "./Detalle-Editar.jsx";
+import DetalleProbar from "./Detalle-Probar.jsx";
 
 class Aplicacion extends React.Component {
   render() {
@@ -38,9 +39,9 @@ class Aplicacion extends React.Component {
               </div>
             </div>
           </nav>
-
-          <div className="auth-wrapper">
-            <div className="auth-inner">
+          <br /><br />
+          
+            <div className="auth-inner" style={{ margin: "5%"}}>
                 <Switch>
                   <Route path="/Middle-Point/login">
                     <Login />
@@ -57,6 +58,9 @@ class Aplicacion extends React.Component {
                   <Route path="/Middle-Point/editar">
                     <DetalleEditar />
                   </Route>
+                  <Route path="/Middle-Point/probar">
+                    <DetalleProbar />
+                  </Route>
                   <Route path="/Middle-Point/">
                     <Home />
                   </Route>
@@ -67,7 +71,7 @@ class Aplicacion extends React.Component {
                 </Switch>
             </div>
           </div>
-        </div>
+        
       </BrowserRouter>
     );
   }

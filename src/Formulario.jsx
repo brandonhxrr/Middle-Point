@@ -19,6 +19,7 @@ export default class Formulario extends Component {
           <label>Ingresa el primer punto: (</label>
           <input
           required
+          step="0.05"
             type="number"
             className="form-control"
             placeholder="0"
@@ -27,6 +28,7 @@ export default class Formulario extends Component {
           <label>,</label>
           <input
             required
+            step="0.05"
             type="number"
             className="form-control"
             placeholder="0"
@@ -38,6 +40,7 @@ export default class Formulario extends Component {
           <label>Ingresa el segundo punto: (</label>
           <input
             required
+            step="0.05"
             type="number"
             className="form-control"
             placeholder="0"
@@ -46,6 +49,7 @@ export default class Formulario extends Component {
           <label>,</label>
           <input
             required
+            step="0.05"
             type="number"
             className="form-control"
             placeholder="0"

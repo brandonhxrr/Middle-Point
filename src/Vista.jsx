@@ -26,7 +26,7 @@ const Vista = ({ id, titulo, x1, y1, x2, y2 }) => {
                             <td>{y2}</td>
                         </tr>
                     </tbody>
-                </table>                
+                </table>             
         </div>
            
            

@@ -21,6 +21,7 @@ const Editar = ({ id, x1, y1, x2, y2, r1, r2 }) => {
           <input
           required
             type="number"
+            step="0.05"
             className="form-control"
             placeholder="0"
             name="x1"
@@ -29,6 +30,7 @@ const Editar = ({ id, x1, y1, x2, y2, r1, r2 }) => {
           <label>,</label>
           <input
             required
+            step="0.05"
             type="number"
             className="form-control"
             placeholder="0"
@@ -41,6 +43,7 @@ const Editar = ({ id, x1, y1, x2, y2, r1, r2 }) => {
           <label>Ingresa el segundo punto: (</label>
           <input
             required
+            step="0.05"
             type="number"
             className="form-control"
             placeholder="0"
@@ -50,6 +53,7 @@ const Editar = ({ id, x1, y1, x2, y2, r1, r2 }) => {
           <label>,</label>
           <input
             required
+            step="0.05"
             type="number"
             className="form-control"
             placeholder="0"

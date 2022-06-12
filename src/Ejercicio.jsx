@@ -7,13 +7,16 @@ const Ejercicio = ({ id, titulo }) => {
 
     const handleClickEliminar = (event) => {
         //Eliminar
-        axios.post(`/Middle-Point/Eliminar?id=${id}`).then(response => {
+        if(confirm("¿Está seguro de eliminar el ejercicio?")){
+            axios.post(`/Middle-Point/Eliminar?id=${id}`).then(response => {
             
-        }).catch(error => {
-            console.info(error);
-        }).finally(() => {
-            window.location.href = "/Middle-Point/";
-        });
+            }).catch(error => {
+                console.info(error);
+            }).finally(() => {
+                window.location.href = "/Middle-Point/";
+            });
+        }
+        
     }
 
     return (
@@ -32,6 +35,13 @@ const Ejercicio = ({ id, titulo }) => {
                     className="M-6">
                     <Link to={`/Middle-Point/editar?id=${id}`} className="CustomLink" >
                         Editar ejercicio
+                    </Link>
+                </Button>
+                <Button
+                    variant="primary"
+                    className="M-6">
+                    <Link to={`/Middle-Point/probar?id=${id}`} className="CustomLink" >
+                        Probar ejercicio
                     </Link>
                 </Button>
                 <Button
