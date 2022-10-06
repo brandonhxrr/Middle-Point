@@ -3,7 +3,7 @@ export default class About extends Component {
   render() {
     return (
       <div>
-          <h3>CRUD con Webpack-React-Babel con backend en Java servlets y base de datos</h3>
+          <h3>Proyecto final: APLICACION WEB CALCULADORA DE DISTANCIA Y PUNTO MEDIO UTILIZANDO REACT CON ECMASCRIPT 6, BABEL Y WEBPACK</h3>
 
           <p><i>5CM2</i></p>
 

@@ -3,11 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>escom.ipn</groupId>
-    <artifactId>Middle-Point</artifactId>
+    <artifactId>MiddlePoint</artifactId>
     <version>1.0</version>
     <packaging>war</packaging>
 
-    <name>5CM22020350973IDT4</name>
+    <name>MiddlePoint</name>
 
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>

@@ -13,7 +13,7 @@ export default class Home extends Component {
     }
 
     componentDidMount() {
-        axios.get("/Middle-Point/Ejercicios").then(response => {
+        axios.get("/MiddlePoint/Ejercicios").then(response => {
             this.setState({ data: response.data });
         }).catch(error => {
             console.info(error);
@@ -36,7 +36,7 @@ export default class Home extends Component {
                         : null
                 }
                 <Button variant="info" style={{ margin: "12px" }}>
-                    <Link to="/Middle-Point/formulario" className="CustomLink">Añadir nuevo ejercicio</Link>
+                    <Link to="/MiddlePoint/formulario" className="CustomLink">Añadir nuevo ejercicio</Link>
                 </Button>
                 <Table striped bordered >
                     <thead>

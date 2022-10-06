@@ -16,7 +16,7 @@ class Aplicacion extends React.Component {
         <div className="App">
           <nav className="navbar navbar-expand-lg navbar-light fixed-top">
             <div className="container">
-              <Link className="navbar-brand" to={"/Middle-Point/"}>
+              <Link className="navbar-brand" to={"/MiddlePoint/"}>
                 Middle Point
               </Link>
               <div
@@ -25,13 +25,13 @@ class Aplicacion extends React.Component {
               >
                 <ul className="navbar-nav ml-auto">
                   <li className="nav-item">
-                    <Link className="nav-link" to={"/Middle-Point/login"}>
+                    <Link className="nav-link" to={"/MiddlePoint/login"}>
                       Acceder
                     </Link>
                   </li>
 
                   <li className="nav-item">
-                    <Link className="nav-link" to={"/Middle-Point/about"}>
+                    <Link className="nav-link" to={"/MiddlePoint/about"}>
                       Acerca de
                     </Link>
                   </li>
@@ -43,25 +43,25 @@ class Aplicacion extends React.Component {
           
             <div className="auth-inner" style={{ margin: "5%"}}>
                 <Switch>
-                  <Route path="/Middle-Point/login">
+                  <Route path="/MiddlePoint/login">
                     <Login />
                   </Route>
-                  <Route path="/Middle-Point/about">
+                  <Route path="/MiddlePoint/about">
                     <About />
                   </Route>
-                  <Route path="/Middle-Point/formulario">
+                  <Route path="/MiddlePoint/formulario">
                     <Formulario />
                   </Route>
-                  <Route path="/Middle-Point/detalle">
+                  <Route path="/MiddlePoint/detalle">
                     <Detalle />
                   </Route>
-                  <Route path="/Middle-Point/editar">
+                  <Route path="/MiddlePoint/editar">
                     <DetalleEditar />
                   </Route>
-                  <Route path="/Middle-Point/probar">
+                  <Route path="/MiddlePoint/probar">
                     <DetalleProbar />
                   </Route>
-                  <Route path="/Middle-Point/">
+                  <Route path="/MiddlePoint/">
                     <Home />
                   </Route>
                   <Route

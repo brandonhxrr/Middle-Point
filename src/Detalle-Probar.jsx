@@ -17,7 +17,7 @@ export default class DetalleProbar extends Component {
       var urlParams = new URLSearchParams(query);
       var pid = urlParams.get('id');
 
-        axios.get("/Middle-Point/BuscarEjercicio", {
+        axios.get("/MiddlePoint/BuscarEjercicio", {
           params: {
             id: pid
           }
